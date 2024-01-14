@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/saulmacflores/cse341-nodesaul/issues"
   },
-  "homepage": "https://github.com/saulmacflores/cse341-nodesaul#readme"
+  "homepage": "https://github.com/saulmacflores/cse341-nodesaul#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
