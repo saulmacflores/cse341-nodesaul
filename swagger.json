@@ -8,7 +8,6 @@
   "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
@@ -62,6 +61,18 @@
             "schema": {
               "type": "object",
               "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "favoriteColor": {
+                  "example": "any"
+                },
                 "birthday": {
                   "example": "any"
                 }
@@ -120,6 +131,18 @@
             "schema": {
               "type": "object",
               "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "favoriteColor": {
+                  "example": "any"
+                },
                 "birthday": {
                   "example": "any"
                 }

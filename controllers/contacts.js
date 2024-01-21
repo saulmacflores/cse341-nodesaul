@@ -23,14 +23,14 @@ const getSingle = async (req, res) => {
     });
 };
 
-const createContact = async (red, res) => {
+const createContact = async (req, res) => {
     //#swagger.tags=['contacts']
     const user = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
         favoriteColor: req.body.favoriteColor,
-        birthday: red.body.birthday
+        birthday: req.body.birthday
     };
     const response = await mongodb.getDatabase().db().collection('users').insertOne(user);
     if (response.acknowledged) {
@@ -41,15 +41,15 @@ const createContact = async (red, res) => {
 
 };
 
-const updateContact = async (red, res) => {
+const updateContact = async (req, res) => {
     //#swagger.tags=['contacts']
-    const userId = new ObjectId(red.params.id);
+    const userId = new ObjectId(req.params.id);
     const user = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
         favoriteColor: req.body.favoriteColor,
-        birthday: red.body.birthday
+        birthday: req.body.birthday
     };
     const response = await mongodb.getDatabase().db().collection('users').replaceOne({_id: userId}, user);
     if (response.modifiedCount > 0) {
@@ -61,7 +61,7 @@ const updateContact = async (red, res) => {
 };
 
 
-const deleteContact = async (red, res) => {
+const deleteContact = async (req, res) => {
     //#swagger.tags=['contacts']
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDatabase().db().collection('users').deleteOne({_id: userId}); 
